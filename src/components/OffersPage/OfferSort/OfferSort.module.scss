@@ -1,0 +1,60 @@
+@import '../colors';
+
+.container {
+  margin-bottom: 15px;
+  padding: 0 15px;
+
+  :not(:last-child) {
+    margin-right: 10px;
+  }
+}
+
+.title {
+  @media (max-width: 576px) {
+    font-size: 12px;
+  }
+}
+
+.button  {
+  padding: .1em .3em;
+  font-size: 14px;
+  line-height: 1;
+  color: $color-gray-light;
+  border-radius: 8px;
+  border: none;
+  background: none;
+  transition: filter ease-in;
+  user-select: none;
+
+  @media (max-width: 576px) {
+    font-size: 12px;
+  }
+
+  &:hover {
+    color: inherit;
+    filter: drop-shadow( 0 0 10px $pagination-btn-color);
+    cursor: pointer;
+  }
+
+  &:disabled {
+    color: initial;
+    cursor: default;
+    color: $special-green-color-dark;
+    font-weight: 700;
+
+    &:hover {
+      filter: none;
+    }
+  }
+
+  &:focus {
+    outline: none;
+    color: inherit;
+    box-shadow: 0 0 7px 5px $pagination-btn-color;
+  }
+
+  &:focus:not(:focus-visible) {
+    box-shadow: initial;
+  }
+}
+

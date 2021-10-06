@@ -1,0 +1,54 @@
+@import '../colors';
+
+.main {
+  display: flex;
+  min-height: 300px;
+  padding: 30px;
+  background-color: $main-bg-color;
+
+  .list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 1400px;
+    background: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    list-style: none;
+
+    @media(max-width: 1024px) {
+      align-items: flex-start;
+    }
+  }
+
+  .item {
+    flex-basis: 33%;
+    font-size: 18px;
+
+    @media(max-width: 1024px) {
+      font-size:14px;
+    }
+
+    @media(max-width: 576px) {
+      flex-basis: 50%;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
+
+    :first-child {
+      line-height: 1;
+      margin-bottom: 8px;
+      color: #999;
+    }
+
+    :last-child {
+      font-weight: 700;
+    }
+  }
+}

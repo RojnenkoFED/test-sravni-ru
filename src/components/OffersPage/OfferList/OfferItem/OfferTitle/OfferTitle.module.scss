@@ -1,0 +1,42 @@
+@import '../../../colors';
+$text-color: rgb(60, 62, 68);
+
+.container {
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1;
+
+  .rate {
+    margin-bottom: 10px;
+
+    @media(max-width: 1024px) {
+      display: none;
+    }
+
+    span{
+      font-size: 24px;
+      font-weight: 700;
+
+      @media(min-width: 1025px) and (max-width: 1400px) {
+        font-size: 21px;
+        line-height: 1.2;
+      }
+    }
+  }
+
+  .name {
+    font-size: .9em;
+    line-height: 1.2;
+    color: $color-gray-light;
+
+    @media(max-width: 1024px) {
+      line-height: 1;
+      color: $text-color;
+
+      &::after,
+      &::before {
+        content: '"';
+      }
+    }
+  }
+}

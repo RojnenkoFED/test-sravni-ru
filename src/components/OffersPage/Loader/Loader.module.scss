@@ -1,0 +1,32 @@
+@import '../colors';
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba($color: $color-gray-light, $alpha: .8);
+  z-index: 10;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  transform: translateY(40vh);
+}
+
+.loader {
+  display: block;
+  width: 150px;
+  user-select: none;
+
+  @media (max-width: 1024px) {
+    width: 120px;
+  }
+
+  @media (max-width: 768px) {
+    // margin-top: 70px;
+    width: 100px;
+  }
+}

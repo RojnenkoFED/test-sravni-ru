@@ -1,0 +1,25 @@
+.container {
+  flex-direction: column;
+  align-items: flex-start;
+
+  .credit {
+    margin-bottom: 10px;
+    line-height: 1;
+
+    span {
+      font-weight: 700;
+    }
+  }
+
+  .period {
+    font-size: .9em;
+  }
+
+  @media(max-width: 1024px) {
+    order: 3;
+
+    .period {
+      display: none;
+    }
+  }
+}

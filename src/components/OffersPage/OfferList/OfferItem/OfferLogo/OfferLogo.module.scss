@@ -1,0 +1,15 @@
+.container {
+  align-items: center;
+
+  @media (max-width: 1024px) {
+   justify-content: flex-start;
+  }
+
+  .logo{
+    max-width: 150px;
+
+    @media (max-width: 1024px) {
+      max-width: 100px;
+    }
+  }
+}
