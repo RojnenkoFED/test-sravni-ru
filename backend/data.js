@@ -1,5 +1,5 @@
 // eslint-disable-next-line import/no-anonymous-default-export
-export default [
+const data = [
 	{
 		"name": "Квартира или доля",
 		"alias": "kvartira-ili-dolya-moskva-1",
@@ -1925,3 +1925,5 @@ export default [
 		}
 	}
 ]
+
+module.exports = data;

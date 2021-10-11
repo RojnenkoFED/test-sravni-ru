@@ -1,6 +1,6 @@
 import { OfferAction, OfferActionTypes, OfferState } from "../../types/offer";
 import { removeProp } from "../utils/filter";
-import { addIdToOffer, setBanks, setTerms } from "../utils/offer";
+import { setBanks, setTerms } from "../utils/offer";
 
 const initialState = {
   offers: [],
@@ -18,7 +18,7 @@ export const offerReducer = (state: OfferState = initialState, action:OfferActio
 
     case OfferActionTypes.FETCH_SUCCESS_OFFERS:
       return { ...removeProp('loading', state),
-                  offers: addIdToOffer(action.payload),
+                  offers: action.payload,
                   banks: setBanks(action.payload),
                   term: setTerms(action.payload) };
 
@@ -31,7 +31,7 @@ export const offerReducer = (state: OfferState = initialState, action:OfferActio
                   shown: action.payload};
 
     case OfferActionTypes.SET_CURRENT_OFFER:
-      return { ...state,
+      return { ...removeProp('loading', state),
                   currentOffer: action.payload };
 
     case OfferActionTypes.FETCH_MEDIA_QUERY:

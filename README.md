@@ -1,6 +1,8 @@
 ### `Тестовое задание для sravni.ru`
 
-- npm start
+- npm init
+- cd ./client npm init
+- cd ../ npm dev
 
 
 

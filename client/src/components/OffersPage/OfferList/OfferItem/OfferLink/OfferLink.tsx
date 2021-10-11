@@ -1,6 +1,5 @@
 import styles from "./OfferLink.module.scss";
 import { NavLink } from "react-router-dom";
-import { useTypedSelector } from "../../../../../hooks/useTypedSelector";
 import { useActions } from "../../../../../hooks/useActions";
 
 type OfferLinkProps = {
@@ -9,10 +8,8 @@ type OfferLinkProps = {
 };
 
 const OfferLink = (props: OfferLinkProps) => {
-  const { offers } = useTypedSelector(state => state.offer);
   const { license, pseudoId } = props;
-  const { setCurrentOfferPage } = useActions();
-  const currentOffer = offers.find(item => item.id === pseudoId);
+  const { fetchCurrentOffer } = useActions();
 
   return (
     <div className={styles.container}>
@@ -22,7 +19,7 @@ const OfferLink = (props: OfferLinkProps) => {
       <NavLink
         to={`/about/${pseudoId}`}
         className={styles.button}
-        onClick={() => setCurrentOfferPage(currentOffer!)}>Узнать больше
+        onClick={() => fetchCurrentOffer(pseudoId)}>Узнать больше
       </NavLink>
     </div>
   );
